@@ -12,17 +12,19 @@ mongoose.connect("mongodb://localhost/testdb", () => {
 
 run()
 async function run() {
-    try {
-        const a = await User.create({
-            name: "maharab",
-            age: 24,
-            email: "kibRia@gmail.com",
-            hobbies: ["CYCLING", "SLEEPING"],
-            address: { street: "421/B, Malibagh", city: "Dhaka" }
-        })
-        console.log(a);
-    }
-    catch (error) {
-        console.log(error.message)
-    }
+    const b = await User.where("age").equals(28);
+    console.log(b);
+    // try {
+    //     const a = await User.create({
+    //         name: "Sanjib",
+    //         age: 28,
+    //         email: "sanjib@gmail.com",
+    //         hobbies: ["CODING", "FOOTBALL"],
+    //         address: { street: "Khilkhet rd.", city: "Dhaka" }
+    //     })
+    //     console.log(a);
+    // }
+    // catch (error) {
+    //     console.log(error.message)
+    // }
 }

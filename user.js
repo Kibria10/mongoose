@@ -23,7 +23,10 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: () => Date.now(),
     },
-    // bestFriend: mongoose.SchemaType.ObjectId,
+    bestFriend: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "User"
+    },
     hobbies: [], //array; if left blank, it can be array of anything
     address: {
         street: String,
